@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>PrivNotepad: Selbstzerstörende Notizen sicher versenden!</title>
+    <meta name="title" content="PrivNotepad: Selbstzerstörende Notizen sicher versenden!">
+    <meta name="description" content="Senden Sie sichere, selbstzerstörende Notizen mit PrivNotepad! Teilen Sie vertrauliche Nachrichten, die nach dem Lesen verschwinden. Keine Anmeldung erforderlich. Jetzt starten!">
+    <meta name="keywords" content="sichere notizen, selbstzerstörende nachrichten, private notizen, verschlüsselte nachrichten, sicheres teilen, datenschutz, ende-zu-ende-verschlüsselung, privatsphäre">
+    <meta name="author" content="Privnote Pad">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    <link rel="canonical" href="https://privnotepad.com/de/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privnotepad.com/de/">
+    <meta property="og:title" content="PrivNotepad: Selbstzerstörende Notizen sicher versenden!">
+    <meta property="og:description" content="Senden Sie sichere, selbstzerstörende Notizen mit PrivNotepad! Teilen Sie vertrauliche Nachrichten, die nach dem Lesen verschwinden. Keine Anmeldung erforderlich. Jetzt starten!">
+    <meta property="og:image" content="/images/og-image.png">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://privnotepad.com/de/">
+    <meta property="twitter:title" content="PrivNotepad: Selbstzerstörende Notizen sicher versenden!">
+    <meta property="twitter:description" content="Senden Sie sichere, selbstzerstörende Notizen mit PrivNotepad! Teilen Sie vertrauliche Nachrichten, die nach dem Lesen verschwinden. Keine Anmeldung erforderlich. Jetzt starten!">
+    <meta property="twitter:image" content="/images/og-image.png">
+
+   <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="favicon.png" color="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body data-bs-theme="light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Privnote Pad Homepage">
+                <i class="fas fa-lock-open me-2" aria-hidden="true"></i>Privnote Pad
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Über uns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy-policy.html">Datenschutz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">Häufige Fragen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="support.html">Hilfe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Note Creation Section -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <div class="text-center mb-5">
+                    <h1 class="brand-title">Sichere Selbstzerstörende Notizen mit Privnotepad</h1>
+                    <p class="lead">Schützen Sie Ihre Privatsphäre mit verschlüsselten, temporären Notizen, die nach dem Lesen verschwinden.</p>
+                </div>
+
+                <!-- Note Creation Form -->
+                <div class="card" id="createNoteCard">
+                    <div class="card-body">
+                        <form id="noteForm" role="form" aria-label="Sichere Notiz erstellen">
+                            <div class="mb-3">
+                                <label for="noteContent" class="form-label">Ihre Sichere Notiz</label>
+                                <textarea class="form-control" id="noteContent" rows="6" placeholder="Geben Sie Ihre sichere Notiz hier ein..." required aria-required="true"></textarea>
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="previewNote()" aria-label="Vorschau der Notiz">
+                                        <i class="fas fa-eye"></i> Vorschau
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" id="formatBtn">
+                                        <i class="fas fa-code"></i> Als Code formatieren
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="expirationTime" class="form-label">Ablaufzeit</label>
+                                    <select class="form-select" id="expirationTime">
+                                        <option value="5">5 Minuten</option>
+                                        <option value="60">1 Stunde</option>
+                                        <option value="1440">24 Stunden</option>
+                                        <option value="read">Nach dem Lesen</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="password" class="form-label">Passwortschutz</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Optionales Passwort">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-lock me-2"></i>Sichere Notiz erstellen
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Generated Link Card -->
+                <div class="card mt-4 d-none" id="linkCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Ihr sicherer Link</h5>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="generatedLink" readonly>
+                            <button class="btn btn-outline-primary" type="button" id="copyLink">
+                                <i class="fas fa-copy"></i> Kopieren
+                            </button>
+                        </div>
+                        <p class="text-muted small">Teilen Sie diesen sicheren Link mit dem Empfänger. Die Notiz wird nach dem Lesen automatisch gelöscht.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Section -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h2 class="h3 text-center mb-4">Warum sind selbstzerstörende Notizen wichtig?</h2>
+                        <p class="lead text-center">In einer Welt, in der Datenschutz immer wichtiger wird, bieten selbstzerstörende Notizen eine sichere Möglichkeit, vertrauliche Informationen zu teilen. Mit Privnotepad können Sie sicher sein, dass Ihre Nachrichten nach dem Lesen automatisch gelöscht werden und keine Spuren hinterlassen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h2 class="h3 text-center mb-4">Wie funktioniert Privnotepad?</h2>
+                        <p class="lead text-center mb-5">Privnotepad ist ein einfaches, aber leistungsstarkes Tool, das Ihnen hilft, sichere Notizen zu erstellen und zu teilen.</p>
+                        
+                        <div class="how-it-works">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h5>Notiz erstellen</h5>
+                                    <p>Geben Sie Ihre Nachricht in das Textfeld ein.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h5>Link generieren</h5>
+                                    <p>Klicken Sie auf "Notiz erstellen", um einen sicheren Link zu erhalten.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h5>Teilen und schützen</h5>
+                                    <p>Senden Sie den Link an den Empfänger. Sobald die Notiz gelesen wird, wird sie automatisch gelöscht.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10">
+                <h2 class="h3 text-center mb-4">Vorteile von Privnotepad</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Ende-zu-Ende-Verschlüsselung</h5>
+                                <p>Ihre Notizen sind vollständig verschlüsselt und sicher.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Selbstzerstörend</h5>
+                                <p>Notizen verschwinden nach dem Lesen und hinterlassen keine Spuren.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Keine Registrierung erforderlich</h5>
+                                <p>Verwenden Sie Privnotepad sofort, ohne Anmeldung.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Optimiert für alle Geräte</h5>
+                                <p>Nutzen Sie Privnotepad auf Ihrem Desktop, Tablet oder Smartphone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10">
+                <h2 class="h3 text-center mb-4">Anwendungsfälle für selbstzerstörende Notizen</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="use-case-box">
+                            <div class="use-case-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="use-case-content">
+                                <h5>Geschäftliche Kommunikation</h5>
+                                <p>Sichere Übermittlung vertraulicher Informationen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="use-case-box">
+                            <div class="use-case-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="use-case-content">
+                                <h5>Persönliche Nachrichten</h5>
+                                <p>Schutz privater Gespräche vor unbefugtem Zugriff.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="use-case-box">
+                            <div class="use-case-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="use-case-content">
+                                <h5>Passwort-Sharing</h5>
+                                <p>Sicheres Teilen von Passwörtern ohne Risiko.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h2 class="h3 text-center mb-4">Häufig gestellte Fragen (FAQ)</h2>
+                        <div class="accordion" id="faqAccordion">
+                            <!-- Question 1 -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        <i class="fas fa-clock text-danger me-2"></i>
+                                        Wie lange bleiben die Notizen verfügbar?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Notizen werden sofort nach dem Lesen gelöscht und sind nicht mehr zugänglich.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        <i class="fas fa-undo text-danger me-2"></i>
+                                        Kann ich die Notizen wiederherstellen?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Nein, einmal gelöschte Notizen können nicht wiederhergestellt werden.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        <i class="fas fa-euro-sign text-danger me-2"></i>
+                                        Ist Privnotepad kostenlos?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Ja, Privnotepad ist komplett kostenlos und erfordert keine Registrierung.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Note Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="previewContent" class="border rounded p-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="d-flex justify-content-center gap-4 mb-3">
+                <a href="privacy-policy.html" class="text-decoration-none text-secondary">Datenschutz</a>
+                <a href="faq.html" class="text-decoration-none text-secondary">Häufige Fragen</a>
+                <a href="support.html" class="text-decoration-none text-secondary">Hilfe</a>
+                <a href="contact.html" class="text-decoration-none text-secondary">Kontakt</a>
+                <a href="about.html" class="text-decoration-none text-secondary">Über uns</a>
+            </div>
+            <div class="text-center text-secondary">
+                <small>&copy; 2025 Privnote Pad. Alle Rechte vorbehalten. <a href="https://wissentechs.com" target="_blank">Wissen Techs</a></small>
+                <!-- <small>&copy; 2025 Privnote Pad. Alle Rechte vorbehalten.</small> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CryptoJS for encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
